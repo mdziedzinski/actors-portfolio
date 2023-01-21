@@ -5,7 +5,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        hero1: "url('./assets/unsplash1.jpg')",
+        hero1: "url('./assets/hero-1.webp')",
+        hero2: "url('./assets/hero-2.webp')",
+        hero3: "url('./assets/hero-3.webp')",
+        hero4: "url('./assets/hero-4.webp')",
       },
     },
   },
