@@ -5,7 +5,7 @@ const ReadMore = (props: any) => {
     <div
       ref={props.ref}
       id="99"
-      className='h-[50vh] w-full bg-gradient-to-r from-purple-500 to-pink-500"'
+      className="flex flex-col h-[50vh] p-10 w-full text-slate-50 bg-gray-900"
     >
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
       doloribus, non fuga repellendus a reprehenderit consequatur totam.
@@ -18,6 +18,7 @@ const ReadMore = (props: any) => {
       impedit quo nisi quis repellat blanditiis enim, libero fugit placeat, unde
       nemo. Nostrum magnam quo labore. Aliquam asperiores distinctio natus
       itaque error molestiae nam eaque!
+      {props.children}
     </div>
   );
 };
