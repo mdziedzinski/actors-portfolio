@@ -13,11 +13,19 @@ const heroClass4 =
 const Main = () => {
   return (
     <main className=" flex flex-col flex-wrap content-center justify-center">
-      <Article
-        id="1"
-        className={heroClass1}
-        title="Grzegorz Borowski"
-      ></Article>
+      <Article id="1" className={heroClass1} title="Grzegorz Borowski">
+        ~start Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        doloribus, non fuga repellendus a reprehenderit consequatur totam.
+        Consectetur quisquam repellat neque optio maxime, quas magni eligendi
+        dolorem eaque placeat ad. Sint vero quibusdam, repudiandae ab assumenda
+        sit at ut odio, eum id, ipsam obcaecati! Fugit, porro, quae libero
+        commodi accusamus architecto deleniti at id laudantium, blanditiis
+        explicabo repudiandae amet eius? Et, totam similique. Ab incidunt
+        laudantium corporis iusto at quaerat! Obcaecati non doloremque expedita
+        eveniet, impedit quo nisi quis repellat blanditiis enim, libero fugit
+        placeat, unde nemo. Nostrum magnam quo labore. Aliquam asperiores
+        distinctio natus itaque error molestiae nam eaque! end~
+      </Article>
       <Article id="2" className={heroClass2} title="O mnie"></Article>
       <Article id="3" className={heroClass3} title="Galeria"></Article>
       <Article id="4" className={heroClass4} title="Filmografia"></Article>

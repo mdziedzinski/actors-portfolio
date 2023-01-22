@@ -15,6 +15,7 @@ type Props = {
   className?: string;
   id?: string;
   title?: string;
+  children?: string;
 };
 const heroClass =
   "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-hero1";
@@ -51,6 +52,7 @@ const Article = (props: Props) => {
       <div ref={ref}>
         {isShown && (
           <ReadMore>
+            <p>{props.children}</p>
             <button
               className="m-5 w-24 h-24 self-center  bg-gray-800 text-white   hover:bg-gray-50/50 font-semibold border border-gray-400 rounded-full shadow"
               onClick={handleClick}
