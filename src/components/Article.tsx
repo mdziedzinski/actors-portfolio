@@ -43,7 +43,7 @@ const Article = (props: Props) => {
           </h2>
           <button
             onClick={handleClick}
-            className="w-20 h-20  self-center  text-white hover:bg-black hover:bg-opacity-50  border  font-semibold rounded-full drop-shadow-lg "
+            className="w-20 h-20  self-center  text-white hover:bg-black hover:bg-opacity-50  border-dashed border-2  font-semibold rounded-full drop-shadow-lg "
           >
             Pokaż więcej
           </button>
@@ -54,7 +54,7 @@ const Article = (props: Props) => {
           <ReadMore>
             {props.children}
             <button
-              className="m-5 w-20 h-20 self-center  text-white hover:bg-black hover:bg-opacity-50  border  font-semibold rounded-full drop-shadow-lg"
+              className="m-1 p-3 self-center  text-white hover:bg-black hover:bg-opacity-50  border  font-semibold rounded drop-shadow-lg"
               onClick={handleClick}
             >
               Ukryj sekcję

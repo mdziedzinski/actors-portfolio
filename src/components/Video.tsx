@@ -37,14 +37,14 @@ const Video = (props: Props) => {
     <>
       <div
         id={props.id}
-        className="relative flex flex-col items-center justify-center h-[50vh] overflow-hidden"
+        className="relative flex flex-col items-center justify-center h-screen overflow-hidden"
       >
         <h2 className="relative z-30 text-center mb-10 text-5xl text-white font-bold drop-shadow-lg ">
           {props.title}
         </h2>
         <button
           onClick={handleClick}
-          className="relative  z-30 w-20 h-20 self-center  text-white hover:bg-black hover:bg-opacity-50  border  font-semibold rounded-full drop-shadow-lg"
+          className="relative  z-30 w-20 h-20 self-center  text-white hover:bg-black hover:bg-opacity-50  border-dashed border-2 border-sky-500 font-semibold rounded-full drop-shadow-lg"
         >
           Zobacz video
         </button>
@@ -64,7 +64,7 @@ const Video = (props: Props) => {
           <ReadMore>
             {props.children}
             <button
-              className="m-5 w-20 h-20 self-center  text-white hover:bg-black hover:bg-opacity-50  border  font-semibold rounded-full drop-shadow-lg"
+              className="m-1 p-3 self-center  text-white hover:bg-black hover:bg-opacity-50  border  font-semibold rounded drop-shadow-lg"
               onClick={handleClick}
             >
               Ukryj sekcję

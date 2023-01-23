@@ -17,7 +17,7 @@ const Main = () => {
     <main className=" flex flex-col flex-wrap content-center justify-center overflow-hidden">
       <Video video={gbwideo} title="Grzegorz Borowski">
         <div
-          className="h-[75vh] w-full p-10
+          className="h-[90vh] w-full p-5
           aspect-square
           md:aspect-video"
         >
