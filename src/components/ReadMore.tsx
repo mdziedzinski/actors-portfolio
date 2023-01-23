@@ -5,9 +5,8 @@ const ReadMore = (props: any) => {
     <div
       ref={props.ref}
       id="99"
-      className="flex flex-col  p-10 w-full text-slate-50 bg-gray-900"
+      className="flex flex-col  p-5 w-full h-full text-slate-50 bg-gray-900"
     >
-      
       {props.children}
     </div>
   );

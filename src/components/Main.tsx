@@ -1,6 +1,7 @@
 import React from "react";
 import Article from "./Article";
 import gbwideo from "../assets/gb_wideo.webm";
+import Video from "./Video";
 
 const heroClass1 =
   "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-hero1";
@@ -13,21 +14,28 @@ const heroClass4 =
 
 const Main = () => {
   return (
-    <main className=" flex flex-col flex-wrap content-center justify-center">
-      <header className="relative flex items-center justify-center h-[50vh] overflow-hidden">
-        <div className="relative z-30 p-5 text-2xl text-white bg-purple-300 bg-opacity-50 rounded-xl">
-          Welcome to my site!
-        </div>
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute z-10 min-w-full min-h-full max-w-none w-auto"
+    <main className=" flex flex-col flex-wrap content-center justify-center overflow-hidden">
+      <Video video={gbwideo} title="Grzegorz Borowski">
+        <div
+          className="h-[75vh] w-full p-10
+          aspect-square
+          md:aspect-video"
         >
-          <source src={gbwideo} type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
-      </header>
+          <iframe
+            className="
+        
+          h-full
+          w-full
+          aspect-square
+          md:aspect-video"
+            src="https://www.youtube.com/embed/bkOzRHjofHE"
+            title="Grzegorz Borowski - demo aktorskie | showreel"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </Video>
+
       <Article id="1" className={heroClass1} title="Grzegorz Borowski">
         <p>
           ~start Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -40,6 +48,14 @@ const Main = () => {
           incidunt laudantium corporis iusto at quaerat! Obcaecati non
           doloremque expedita eveniet, impedit quo nisi quis repellat blanditiis
           enim, libero fugit placeat, unde nemo. Nostrum magnam quo labore.
+          Aliquam asperiores distinctio natus itaque error molestiae nam eaque!
+          end~ enim, libero fugit placeat, unde nemo. Nostrum magnam quo labore.
+          Aliquam asperiores distinctio natus itaque error molestiae nam eaque!
+          end~ enim, libero fugit placeat, unde nemo. Nostrum magnam quo labore.
+          Aliquam asperiores distinctio natus itaque error molestiae nam eaque!
+          end~ enim, libero fugit placeat, unde nemo. Nostrum magnam quo labore.
+          Aliquam asperiores distinctio natus itaque error molestiae nam eaque!
+          end~ enim, libero fugit placeat, unde nemo. Nostrum magnam quo labore.
           Aliquam asperiores distinctio natus itaque error molestiae nam eaque!
           end~
         </p>
