@@ -15,7 +15,7 @@ const heroClass4 =
 const Main = () => {
   return (
     <main className=" flex flex-col flex-wrap content-center justify-center overflow-hidden">
-      <Video video={gbwideo} title="Grzegorz Borowski">
+      <Video video={gbwideo} title="GRZEGORZ BOROWSKI">
         <div
           className="h-[90vh] w-full p-5
           aspect-square
@@ -36,29 +36,39 @@ const Main = () => {
         </div>
       </Video>
 
-      <Article id="1" className={heroClass1} title="Grzegorz Borowski">
-        <p>
-          ~start Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Ducimus doloribus, non fuga repellendus a reprehenderit consequatur
-          totam. Consectetur quisquam repellat neque optio maxime, quas magni
-          eligendi dolorem eaque placeat ad. Sint vero quibusdam, repudiandae ab
-          assumenda sit at ut odio, eum id, ipsam obcaecati! Fugit, porro, quae
-          libero commodi accusamus architecto deleniti at id laudantium,
-          blanditiis explicabo repudiandae amet eius? Et, totam similique. Ab
-          incidunt laudantium corporis iusto at quaerat! Obcaecati non
-          doloremque expedita eveniet, impedit quo nisi quis repellat blanditiis
-          enim, libero fugit placeat, unde nemo. Nostrum magnam quo labore.
-          Aliquam asperiores distinctio natus itaque error molestiae nam eaque!
-          end~ enim, libero fugit placeat, unde nemo. Nostrum magnam quo labore.
-          Aliquam asperiores distinctio natus itaque error molestiae nam eaque!
-          end~ enim, libero fugit placeat, unde nemo. Nostrum magnam quo labore.
-          Aliquam asperiores distinctio natus itaque error molestiae nam eaque!
-          end~ enim, libero fugit placeat, unde nemo. Nostrum magnam quo labore.
-          Aliquam asperiores distinctio natus itaque error molestiae nam eaque!
-          end~ enim, libero fugit placeat, unde nemo. Nostrum magnam quo labore.
-          Aliquam asperiores distinctio natus itaque error molestiae nam eaque!
-          end~
-        </p>
+      <Article id="1" className={heroClass1} title="AUDIOBOOKI">
+        <div>
+          <h2>Audiobooki</h2>
+          <p>
+            Przeczytanych przeze mnie książek możesz posłuchać w takich
+            miejscach jak: Virtualo, Audioteka, Storytel, Empik Go.
+          </p>
+          <ul>
+            <li> James Clawell „Gai-Jin” </li>
+            <li>Tomasz Kabarowski, Piotr Wójcik „Kryptowaluty od zera”</li>
+            <li> Florian Konrad „Wypadowy - twór anormalny”</li>
+            <li> Agata Czykierda-Grabowska „Felicja znaczy szczęście” </li>
+            <li> Anna Rosłoniec „Zorza”</li> <li> Jacek Paśnik „Dzieci” </li>
+            <li>Krzysztof Beśka „Przepustka do piekła”</li>
+            <li>Krzysztof Beśka „Spowiedź w fotoplastikonie”</li>{" "}
+            <li>Krzysztof Beśka „Rikszą do nieba”</li>
+            <li> Krzysztof Beśka „Autoportret z samowarem”</li>
+            <li> Richard Masland „Czego oczy nie widzą” </li>
+            <li> Monika Skabara „Trzeci dziedzic. Dziedzictwo. Tom 3”</li>
+            <li>Krzysztof Kasowski „Upadek króla rapu”</li>
+            <li>John Scalzi „Upadające imperium” </li>
+            <li>
+              Andrzej Chwalba, Wojciech Harpula „Polska-Rosja. Historia obsesji,
+              obsesja historii”{" "}
+            </li>
+            <li>Peter Wohlleben „Dotknij, poczuj, zobacz” </li>
+            <li> Leon Windscheid „Po co ci emocje” </li>
+            <li> Kazimierz Bilka-Arcikiewicz „Spisek”</li>
+            <li>
+              Jakub Wojtaszczyk „Cudowne przegięcie. Reportaż o polskim dragu.”
+            </li>
+          </ul>
+        </div>
       </Article>
       <Article id="2" className={heroClass2} title="O mnie"></Article>
       <Article id="3" className={heroClass3} title="Galeria"></Article>

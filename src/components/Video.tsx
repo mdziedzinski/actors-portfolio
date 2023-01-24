@@ -44,7 +44,7 @@ const Video = (props: Props) => {
         </h2>
         <button
           onClick={handleClick}
-          className="relative  z-30 w-20 h-20 self-center  text-white hover:bg-black hover:bg-opacity-50  border-dashed border-2 border-sky-500 font-semibold rounded-full drop-shadow-lg"
+          className="relative  z-30 w-20 h-20 self-center  text-white border-dashed border-2 border-sky-500 font-semibold rounded-full drop-shadow-lg hover:bg-black hover:bg-opacity-50 hover:border-solid "
         >
           Zobacz video
         </button>
