@@ -89,22 +89,27 @@ const Main = () => {
           </div>
           <h3 className="text-3xl m-4 text-center ">Role dubbingowe</h3>
           <a
-            className="block text-center hover:text-sky-500"
+            className="block text-center hover:text-sky-500 m-3"
             href="https://dubbingpedia.pl/wiki/Grzegorz_Borowski"
           >
-            Zobacz moje role na Dubbingopedia
+            ▸Zobacz moje role na Dubbingopedia
           </a>
           <a
-            className="block text-center hover:text-sky-500"
+            className="block text-center hover:text-sky-500 m-3"
             href="https://www.filmweb.pl/person/Grzegorz+Borowski-259387"
           >
-            Zobacz moje role na Filmweb
+            ▸Zobacz moje role na Filmweb
           </a>
         </div>
       </Article>
-      <Article id="2" className={heroClass2} title="O mnie"></Article>
-      <Article id="3" className={heroClass3} title="Galeria"></Article>
-      <Article id="4" className={heroClass4} title="Filmografia"></Article>
+      <Article id="2" className={heroClass2} title="GALERIA"></Article>
+      <Article id="3" className={heroClass3} title="O MNIE"></Article>
+      <Article
+        id="3"
+        className={heroClass3}
+        title='PROJEKT "Chodź na Słówko"'
+      ></Article>
+      <Article id="4" className={heroClass4} title="KONTAKT"></Article>
     </main>
   );
 };
