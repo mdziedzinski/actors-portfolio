@@ -39,7 +39,7 @@ const Video = (props: Props) => {
         id={props.id}
         className="relative flex flex-col items-center justify-center h-screen overflow-hidden"
       >
-        <h2 className="relative z-30 text-center mb-10 text-5xl text-white font-bold drop-shadow-lg ">
+        <h2 className="relative z-30 text-center mb-10 text-6xl text-white font-bold drop-shadow-lg ">
           {props.title}
         </h2>
         <button

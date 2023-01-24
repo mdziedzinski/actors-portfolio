@@ -38,7 +38,7 @@ const Article = (props: Props) => {
     <>
       <article id={props.id} className={props.className}>
         <div className="flex flex-col justify-center content-center item-center">
-          <h2 className="text-center mb-10 text-5xl text-white font-bold drop-shadow-lg">
+          <h2 className="text-center mb-10 text-6xl text-white font-bold drop-shadow-lg">
             {props.title}
           </h2>
           <button
