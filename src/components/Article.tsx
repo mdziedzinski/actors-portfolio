@@ -29,7 +29,7 @@ const Article = (props: Props) => {
     });
     ref.current?.scrollIntoView({
       behavior: "smooth",
-      block: "center",
+      block: "start",
       inline: "nearest",
     });
   };
