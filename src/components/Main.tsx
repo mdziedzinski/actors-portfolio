@@ -2,15 +2,19 @@ import React from "react";
 import Article from "./Article";
 import gbwideo from "../assets/gb_wideo.webm";
 import Video from "./Video";
+import Photos from "./Photos";
 
 const heroClass1 =
   "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-hero1";
 const heroClass2 =
-  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-hero2";
+  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-top bg-cover bg-hero2";
 const heroClass3 =
-  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-hero3";
+  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-top bg-cover bg-hero3";
 const heroClass4 =
   "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-hero4";
+
+const heroClass5 =
+  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-slate-900";
 
 const Main = () => {
   return (
@@ -102,14 +106,85 @@ const Main = () => {
           </a>
         </div>
       </Article>
-      <Article id="2" className={heroClass2} title="GALERIA"></Article>
-      <Article id="3" className={heroClass3} title="O MNIE"></Article>
-      <Article
-        id="3"
-        className={heroClass3}
-        title='PROJEKT "Chodź na Słówko"'
-      ></Article>
-      <Article id="4" className={heroClass4} title="KONTAKT"></Article>
+      <Article id="2" className={heroClass2} title="GALERIA">
+        <div className="flex justify-center p-5 w-full">
+          <h2 className="text-4xl m-4 text-center ">Zdjęcia</h2>
+          <Photos></Photos>
+        </div>
+      </Article>
+      <Article id="3" className={heroClass3} title="O MNIE">
+        <h2 className="text-4xl m-4 text-center ">O mnie</h2>
+        <div className="p-5 m-4">
+          <p>
+            Jestem z wykształcenia aktorem.Skończyłem Akademię Sztuk Teatralnych
+            we Wrocławiu.
+          </p>
+          Pracuję jako aktor teatralny, serialowy oraz głosowy (dubbing i
+          audiobooki). Prowadzę również kanał na YouTube pt.: „Chodź na słówko”,
+          który popularyzuje praktykę medytacji w codziennym życiu. Jeśli
+          chciałabyś/ chciałbyś skontaktować się ze mną w sprawie współpracy, to
+          zajrzyj do zakładki „Kontakt” :)
+        </div>
+      </Article>
+      <Article id="3" className={heroClass4} title='PROJEKT "Chodź na Słówko"'>
+        <h2 className="text-4xl m-4 text-center ">Projekt „Chodź na słówko”</h2>
+        <div className="p-5 m-4">
+          <p>
+            Od 2020 roku razem z Marcinem Dziedzińskim prowadzę kanał na YouTube
+            pt.: Chodź na słówko.
+          </p>
+          <p>
+            {" "}
+            To projekt popularyzujący praktykę medytacji i ćwiczeń oddechowych w
+            codziennym życiu. Na kanale znajdziesz mnóstwo prowadzonych przeze
+            mnie prostych ćwiczeń, które pomogą Ci poradzić sobie ze stresem w
+            ciągu dnia, a także medytacji, które pomogą Ci z zaśnięciem w nocy.
+            Nasze nagrania są wyświetlane średnio 500 000 razy miesięcznie, a
+            sam kanał ma już ponad 70 000 subskrybentów.
+          </p>
+        </div>
+        <div
+          className="h-[50vh] w-[90vw] p-5
+          aspect-square
+          md:aspect-video"
+        >
+          <iframe
+            className=" 
+        
+          h-full
+          w-full
+          aspect-square
+          md:aspect-video m-4"
+            src="https://www.youtube.com/embed/eNxTk8QT2s0"
+            title="Chodź na słówko zwiastun kanału"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div
+          className="h-[50vh] w-[90vw] p-5
+          aspect-square
+          md:aspect-video"
+        >
+          <iframe
+            className=" 
+        
+          h-full
+          w-full
+          aspect-square
+          md:aspect-video m-4"
+            src="https://www.youtube.com/embed/U_Xj8AMN0QU"
+            title="Chodź na słówko wim hof"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <a href="" className="m-4 p-3 text-center">
+          Więcej informacji znajdziesz na naszej stronie internetowej:
+          chodznaslowko.com{" "}
+        </a>
+      </Article>
+      <Article id="4" className={heroClass5} title="KONTAKT"></Article>
     </main>
   );
 };
