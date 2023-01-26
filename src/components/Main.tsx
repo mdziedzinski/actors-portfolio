@@ -3,6 +3,9 @@ import Article from "./Article";
 import gbwideo from "../assets/gb_wideo.webm";
 import Video from "./Video";
 import Photos from "./Photos";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useState } from "react";
+import { useRef } from "react";
 
 const heroClass1 =
   "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-hero1";
