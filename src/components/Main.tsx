@@ -7,8 +7,15 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
 import { useRef } from "react";
 
+import ArticleParallax from "./ArticleParallax";
+
+const hero1 = "../assets/hero-1.webp";
+const hero2 = "../assets/hero-2.webp";
+const hero3 = "../assets/hero-3.webp";
+const hero4 = "../assets/hero-4.webp";
+
 const heroClass1 =
-  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-hero1";
+  "flex items-center justify-center h-[50vh] w-screen  bg-center bg-cover bg-hero1";
 const heroClass2 =
   "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-top bg-cover bg-hero2";
 const heroClass3 =
@@ -43,7 +50,7 @@ const Main = () => {
         </div>
       </Video>
 
-      <Article id="1" className={heroClass1} title="AUDIOBOOKI I DUBBING">
+      <Article id="1" bgImage={hero1} title="AUDIOBOOKI I DUBBING">
         <div>
           <h2 className="text-4xl m-4 text-center ">Audiobooki</h2>
           <p>
@@ -109,13 +116,13 @@ const Main = () => {
           </a>
         </div>
       </Article>
-      <Article id="2" className={heroClass2} title="GALERIA">
+      <Article id="2" bgImage={hero2} title="GALERIA">
         <div className="flex justify-center p-5 w-full">
           <h2 className="text-4xl m-4 text-center ">Zdjęcia</h2>
           <Photos></Photos>
         </div>
       </Article>
-      <Article id="3" className={heroClass3} title="O MNIE">
+      <Article id="3" bgImage={hero3} title="O MNIE">
         <h2 className="text-4xl m-4 text-center ">O mnie</h2>
         <div className="p-5 m-4">
           <p>
@@ -129,7 +136,8 @@ const Main = () => {
           zajrzyj do zakładki „Kontakt” :)
         </div>
       </Article>
-      <Article id="3" className={heroClass4} title='PROJEKT "Chodź na Słówko"'>
+
+      <Article id="3" bgImage={hero4} title='PROJEKT "Chodź na Słówko"'>
         <h2 className="text-4xl m-4 text-center ">Projekt „Chodź na słówko”</h2>
         <div className="p-5 m-4">
           <p>
@@ -187,7 +195,7 @@ const Main = () => {
           chodznaslowko.com{" "}
         </a>
       </Article>
-      <Article id="4" className={heroClass5} title="KONTAKT"></Article>
+      <Article id="4" className="" title="KONTAKT"></Article>
     </main>
   );
 };

@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import { createSecureContext } from "tls";
 import { flushSync } from "react-dom";
+import { Parallax, Background } from "react-parallax";
 
 import ReadMore from "./ReadMore";
 
@@ -15,10 +16,11 @@ type Props = {
   className?: string;
   id?: string;
   title?: string;
+  bgImage?: string;
+  bgImageAlt?: string;
   children?: JSX.Element | JSX.Element[];
+  ref?: any;
 };
-const heroClass =
-  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-hero1";
 
 const Article = (props: Props) => {
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
@@ -35,9 +37,16 @@ const Article = (props: Props) => {
   };
 
   return (
-    <>
-      <article id={props.id} className={props.className}>
-        <div className="flex flex-col justify-center content-center item-center">
+    <div>
+      <Parallax strength={-200} className="h-[50vh] w-screen">
+        <Background className="h-[50vh] w-screen">
+          <img
+            className=" w-screen h-[50vh]"
+            src={props.bgImage}
+            alt={props.bgImageAlt}
+          ></img>
+        </Background>
+        <div className="flex flex-col justify-center content-center">
           <h2 className="text-center mb-10 text-6xl text-white font-bold drop-shadow-lg">
             {props.title}
           </h2>
@@ -48,7 +57,7 @@ const Article = (props: Props) => {
             Pokaż więcej
           </button>
         </div>
-      </article>
+      </Parallax>
       <div ref={ref}>
         {isShown && (
           <ReadMore>
@@ -62,7 +71,7 @@ const Article = (props: Props) => {
           </ReadMore>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
