@@ -37,16 +37,13 @@ const Article = (props: Props) => {
   };
 
   return (
-    <div>
-      <Parallax strength={-200} className="h-[50vh] w-screen">
+    <div className="h-[50vh] w-screen">
+      
+      {/* <Parallax strength={-200} className="w-screen">
         <Background className="h-[50vh] w-screen">
-          <img
-            className=" w-screen h-[50vh]"
-            src={props.bgImage}
-            alt={props.bgImageAlt}
-          ></img>
+          <img className="h-auto w-screen" src={props.bgImage} alt={props.bgImageAlt}></img>
         </Background>
-        <div className="flex flex-col justify-center content-center">
+        <div className=" w-screen flex flex-col justify-center content-center">
           <h2 className="text-center mb-10 text-6xl text-white font-bold drop-shadow-lg">
             {props.title}
           </h2>
@@ -57,7 +54,7 @@ const Article = (props: Props) => {
             Pokaż więcej
           </button>
         </div>
-      </Parallax>
+      </Parallax> */}
       <div ref={ref}>
         {isShown && (
           <ReadMore>
