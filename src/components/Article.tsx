@@ -1,5 +1,6 @@
 import React, {
   ElementType,
+  useEffect,
   ReactNode,
   useRef,
   useState,
@@ -8,7 +9,7 @@ import React, {
 } from "react";
 import { createSecureContext } from "tls";
 import { flushSync } from "react-dom";
-import { Parallax, Background } from "react-parallax";
+import { ParallaxBanner } from "react-scroll-parallax";
 
 import ReadMore from "./ReadMore";
 
@@ -20,6 +21,7 @@ type Props = {
   bgImageAlt?: string;
   children?: JSX.Element | JSX.Element[];
   ref?: any;
+  speed?: string;
 };
 
 const Article = (props: Props) => {
@@ -37,24 +39,31 @@ const Article = (props: Props) => {
   };
 
   return (
-    <div className="h-[50vh] w-screen">
-      
-      {/* <Parallax strength={-200} className="w-screen">
-        <Background className="h-[50vh] w-screen">
-          <img className="h-auto w-screen" src={props.bgImage} alt={props.bgImageAlt}></img>
-        </Background>
-        <div className=" w-screen flex flex-col justify-center content-center">
-          <h2 className="text-center mb-10 text-6xl text-white font-bold drop-shadow-lg">
-            {props.title}
-          </h2>
-          <button
-            onClick={handleClick}
-            className="w-20 h-20  self-center  text-white hover:bg-black hover:bg-opacity-50  border-dashed border-2  font-semibold rounded-full drop-shadow-lg "
-          >
-            Pokaż więcej
-          </button>
-        </div>
-      </Parallax> */}
+    <>
+      <ParallaxBanner
+        layers={[
+          { image: `${props.bgImage}`, speed: -25 },
+          {
+            speed: -15,
+            children: (
+              <>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <h1 className="text-8xl text-white font-thin">
+                    {props.title}
+                  </h1>
+                  <button
+                    onClick={handleClick}
+                    className="w-20 h-20  self-center  text-white hover:bg-black hover:bg-opacity-50  border-dashed border-2  font-semibold rounded-full drop-shadow-lg "
+                  >
+                    Pokaż więcej
+                  </button>
+                </div>
+              </>
+            ),
+          },
+        ]}
+        className="aspect-[16/10]"
+      />
       <div ref={ref}>
         {isShown && (
           <ReadMore>
@@ -68,7 +77,7 @@ const Article = (props: Props) => {
           </ReadMore>
         )}
       </div>
-    </div>
+    </>
   );
 };
 
