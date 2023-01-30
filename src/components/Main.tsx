@@ -39,7 +39,7 @@ const Main = () => {
     });
   };
   return (
-    <main className=" flex flex-col flex-wrap content-center justify-center ">
+    <main className="h-full flex flex-col flex-wrap content-center justify-center ">
       <Article
         bgImage={heroV}
         showMore="Zobacz moje demo"
