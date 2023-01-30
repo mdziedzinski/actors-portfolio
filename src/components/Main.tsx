@@ -40,6 +40,26 @@ const Main = () => {
   };
   return (
     <main className="h-full flex flex-col flex-wrap content-center justify-center ">
+      <Video showMore="Zobacz moje demo" title="GRZEGORZ BOROWSKI">
+        <div
+          className="h-[65vh] w-[95vw] 
+          aspect-square
+          md:aspect-video"
+        >
+          <iframe
+            className="
+        
+          h-full
+          w-full
+          aspect-square
+          md:aspect-video"
+            src="https://www.youtube.com/embed/bkOzRHjofHE"
+            title="Grzegorz Borowski - demo aktorskie | showreel"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </Video>
       <Article
         bgImage={heroV}
         showMore="Zobacz moje demo"
