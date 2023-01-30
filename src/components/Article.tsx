@@ -10,6 +10,7 @@ import React, {
 import { createSecureContext } from "tls";
 import { flushSync } from "react-dom";
 import { ParallaxBanner } from "react-scroll-parallax";
+import { RxCaretDown } from "react-icons/rx";
 
 import ReadMore from "./ReadMore";
 
@@ -17,6 +18,7 @@ type Props = {
   className?: string;
   id?: string;
   title?: string;
+  showMore?: string;
   bgImage?: string;
   bgImageAlt?: string;
   children?: JSX.Element | JSX.Element[];
@@ -53,23 +55,26 @@ const Article = (props: Props) => {
                   </h1>
                   <button
                     onClick={handleClick}
-                    className="w-20 h-20  self-center  text-white hover:bg-black hover:bg-opacity-50  border-dashed border-2  font-semibold rounded-full drop-shadow-lg "
+                    className="transition ease-in-out delay-150 hover:scale-110 flex flex-col  justify-center items-center  text-md  text-white    font-normal  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg "
                   >
-                    Pokaż więcej
+                    <p className=" text-md  text-white  font-semibold   ">
+                      {props.showMore}
+                    </p>
+                    <RxCaretDown className="w-[30px] h-[30px]" />
                   </button>
                 </div>
               </>
             ),
           },
         ]}
-        className="md:h-[50vh] h-screen"
+        className="md:h-[65vh] h-screen"
       />
       <div ref={ref}>
         {isShown && (
           <ReadMore>
             {props.children}
             <button
-              className="m-1 p-3 self-center  text-white hover:bg-black hover:bg-opacity-50  border  font-semibold rounded drop-shadow-lg"
+              className="m-1 p-3 self-center  text-white hover:bg-black hover:bg-opacity-50 border-2 border-sky-600  font-semibold rounded drop-shadow-lg"
               onClick={handleClick}
             >
               Ukryj sekcję
