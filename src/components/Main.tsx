@@ -132,7 +132,7 @@ const Main = () => {
         </div>
       </Article>
       <Article showMore="Rozwiń" bgImage={hero2} title="GALERIA">
-        <div className="flex justify-center p-5 w-full">
+        <div className="flex flex-col m-2 justify-center p-2 w-full">
           <h2 className="text-4xl m-4 text-center ">Zdjęcia</h2>
           <Photos></Photos>
         </div>

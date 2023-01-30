@@ -102,7 +102,7 @@ const Photos = () => {
   const [index, setIndex] = useState(-1);
 
   return (
-    <div className="md:w-[60vw]">
+    <div className="w-full">
       <PhotoAlbum
         photos={photos}
         layout="rows"
