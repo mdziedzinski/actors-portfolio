@@ -1,5 +1,6 @@
 import React, {
   ElementType,
+  useEffect,
   ReactNode,
   useRef,
   useState,
@@ -8,6 +9,7 @@ import React, {
 } from "react";
 import { createSecureContext } from "tls";
 import { flushSync } from "react-dom";
+import { ParallaxBanner } from "react-scroll-parallax";
 
 import ReadMore from "./ReadMore";
 
@@ -15,10 +17,12 @@ type Props = {
   className?: string;
   id?: string;
   title?: string;
+  bgImage?: string;
+  bgImageAlt?: string;
   children?: JSX.Element | JSX.Element[];
+  ref?: any;
+  speed?: string;
 };
-const heroClass =
-  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-hero1";
 
 const Article = (props: Props) => {
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
@@ -36,19 +40,30 @@ const Article = (props: Props) => {
 
   return (
     <>
-      <article id={props.id} className={props.className}>
-        <div className="flex flex-col justify-center content-center item-center">
-          <h2 className="text-center mb-10 text-6xl text-white font-bold drop-shadow-lg">
-            {props.title}
-          </h2>
-          <button
-            onClick={handleClick}
-            className="w-20 h-20  self-center  text-white hover:bg-black hover:bg-opacity-50  border-dashed border-2  font-semibold rounded-full drop-shadow-lg "
-          >
-            Pokaż więcej
-          </button>
-        </div>
-      </article>
+      <ParallaxBanner
+        layers={[
+          { image: `${props.bgImage}`, speed: -25 },
+          {
+            speed: -15,
+            children: (
+              <>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <h1 className="text-8xl text-white font-thin">
+                    {props.title}
+                  </h1>
+                  <button
+                    onClick={handleClick}
+                    className="w-20 h-20  self-center  text-white hover:bg-black hover:bg-opacity-50  border-dashed border-2  font-semibold rounded-full drop-shadow-lg "
+                  >
+                    Pokaż więcej
+                  </button>
+                </div>
+              </>
+            ),
+          },
+        ]}
+        className="aspect-[16/10]"
+      />
       <div ref={ref}>
         {isShown && (
           <ReadMore>

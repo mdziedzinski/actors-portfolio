@@ -1,28 +1,46 @@
-import React from "react";
+import React, {
+  ElementType,
+  useEffect,
+  ReactNode,
+  useRef,
+  useState,
+  RefObject,
+  MutableRefObject,
+} from "react";
+import { createSecureContext } from "tls";
+import { flushSync } from "react-dom";
 import Article from "./Article";
 import gbwideo from "../assets/gb_wideo.webm";
 import Video from "./Video";
 import Photos from "./Photos";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useState } from "react";
-import { useRef } from "react";
+import ReadMore from "./ReadMore";
 
-const heroClass1 =
-  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-hero1";
-const heroClass2 =
-  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-top bg-cover bg-hero2";
-const heroClass3 =
-  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-top bg-cover bg-hero3";
-const heroClass4 =
-  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-hero4";
+import ArticleParallax from "./ArticleParallax";
+import { ParallaxBanner } from "react-scroll-parallax";
 
-const heroClass5 =
-  "flex items-center justify-center h-[50vh] w-screen bg-fixed bg-center bg-cover bg-slate-900";
+const heroV = "../assets/hero-v.gif";
+const hero1 = "../assets/hero-1.webp";
+const hero2 = "../assets/hero-2.webp";
+const hero3 = "../assets/hero-3.webp";
+const hero4 = "../assets/hero-4.webp";
 
 const Main = () => {
+  const ref = useRef() as MutableRefObject<HTMLDivElement>;
+  const [isShown, setIsShown] = useState(false);
+  const handleClick = (event: any) => {
+    flushSync(() => {
+      setIsShown((current: any) => !current);
+    });
+    ref.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
+  };
   return (
-    <main className=" flex flex-col flex-wrap content-center justify-center overflow-hidden">
-      <Video video={gbwideo} title="GRZEGORZ BOROWSKI">
+    <main className=" flex flex-col flex-wrap content-center justify-center ">
+      <Article bgImage={heroV} title="GRZEGORZ BOROWSKI">
         <div
           className="h-[90vh] w-[95vw] p-5
           aspect-square
@@ -41,9 +59,8 @@ const Main = () => {
             allowFullScreen
           ></iframe>
         </div>
-      </Video>
-
-      <Article id="1" className={heroClass1} title="AUDIOBOOKI I DUBBING">
+      </Article>
+      <Article bgImage={hero1} title="AUDIOBOOKI I DUBBING">
         <div>
           <h2 className="text-4xl m-4 text-center ">Audiobooki</h2>
           <p>
@@ -109,13 +126,13 @@ const Main = () => {
           </a>
         </div>
       </Article>
-      <Article id="2" className={heroClass2} title="GALERIA">
+      <Article bgImage={hero2} title="GALERIA">
         <div className="flex justify-center p-5 w-full">
           <h2 className="text-4xl m-4 text-center ">Zdjęcia</h2>
           <Photos></Photos>
         </div>
       </Article>
-      <Article id="3" className={heroClass3} title="O MNIE">
+      <Article bgImage={hero3} title="O MNIE">
         <h2 className="text-4xl m-4 text-center ">O mnie</h2>
         <div className="p-5 m-4">
           <p>
@@ -129,7 +146,7 @@ const Main = () => {
           zajrzyj do zakładki „Kontakt” :)
         </div>
       </Article>
-      <Article id="3" className={heroClass4} title='PROJEKT "Chodź na Słówko"'>
+      <Article bgImage={hero4} title=' "Chodź na Słówko"'>
         <h2 className="text-4xl m-4 text-center ">Projekt „Chodź na słówko”</h2>
         <div className="p-5 m-4">
           <p>
@@ -137,7 +154,6 @@ const Main = () => {
             pt.: Chodź na słówko.
           </p>
           <p>
-            {" "}
             To projekt popularyzujący praktykę medytacji i ćwiczeń oddechowych w
             codziennym życiu. Na kanale znajdziesz mnóstwo prowadzonych przeze
             mnie prostych ćwiczeń, które pomogą Ci poradzić sobie ze stresem w
@@ -184,10 +200,10 @@ const Main = () => {
         </div>
         <a href="" className="m-4 p-3 text-center">
           Więcej informacji znajdziesz na naszej stronie internetowej:
-          chodznaslowko.com{" "}
+          chodznaslowko.com
         </a>
       </Article>
-      <Article id="4" className={heroClass5} title="KONTAKT"></Article>
+      <Article bgImage={hero1} title="Kontakt" />
     </main>
   );
 };
