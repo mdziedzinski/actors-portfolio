@@ -48,7 +48,7 @@ const Article = (props: Props) => {
             children: (
               <>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <h1 className="text-8xl text-white font-thin">
+                  <h1 className="md:text-8xl text-white text-center font-thin text-6xl m-10">
                     {props.title}
                   </h1>
                   <button
@@ -62,7 +62,7 @@ const Article = (props: Props) => {
             ),
           },
         ]}
-        className="aspect-[16/10]"
+        className="md:h-[50vh] h-screen"
       />
       <div ref={ref}>
         {isShown && (
