@@ -73,14 +73,11 @@ const Main = () => {
           </p>
           <p className="m-4">A to kilka z nich:</p>
           <ul className="list-disc m-6 p-4">
-            <li> James Clawell „Gai-Jin” </li>
+            <li>James Clawell „Gai-Jin”</li>
             <li>Tomasz Kabarowski, Piotr Wójcik „Kryptowaluty od zera”</li>
             <li> Florian Konrad „Wypadowy - twór anormalny”</li>
             <li> Agata Czykierda-Grabowska „Felicja znaczy szczęście” </li>
             <li> Anna Rosłoniec „Zorza”</li> <li> Jacek Paśnik „Dzieci” </li>
-            <li>Krzysztof Beśka „Przepustka do piekła”</li>
-            <li>Krzysztof Beśka „Spowiedź w fotoplastikonie”</li>{" "}
-            <li>Krzysztof Beśka „Rikszą do nieba”</li>
             <li> Krzysztof Beśka „Autoportret z samowarem”</li>
             <li> Richard Masland „Czego oczy nie widzą” </li>
             <li> Monika Skabara „Trzeci dziedzic. Dziedzictwo. Tom 3”</li>
