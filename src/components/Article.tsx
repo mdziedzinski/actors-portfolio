@@ -49,13 +49,13 @@ const Article = (props: Props) => {
             speed: -15,
             children: (
               <>
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <div className="transition ease-in-out duration-650  absolute inset-0 flex flex-col items-center justify-center  bg-black bg-opacity-30 hover:bg-opacity-10">
                   <h1 className="md:text-7xl text-white text-center font-thin text-6xl m-10">
                     {props.title}
                   </h1>
                   <button
                     onClick={handleClick}
-                    className="transition ease-in-out delay-150 hover:scale-110 flex flex-col  justify-center items-center  text-md  text-white    font-normal  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg "
+                    className="transition-transform hover:scale-110 flex flex-col  justify-center items-center  text-md  text-white    font-normal  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg "
                   >
                     <p className=" text-md  text-white  font-semibold   ">
                       {props.showMore}
