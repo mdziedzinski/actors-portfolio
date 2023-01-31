@@ -49,7 +49,7 @@ const Article = (props: Props) => {
             speed: -15,
             children: (
               <>
-                <div className="transition ease-in-out duration-650  absolute inset-0 flex flex-col items-center justify-center  bg-black bg-opacity-30 hover:bg-opacity-10">
+                <div className="transition ease-in-out duration-650  absolute inset-0 flex flex-col items-center justify-center  bg-black bg-opacity-20 hover:bg-opacity-5">
                   <h1 className="md:text-7xl text-white text-center font-thin text-6xl m-10">
                     {props.title}
                   </h1>

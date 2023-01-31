@@ -54,7 +54,7 @@ const Contact = (props: Props) => {
                   <h1 className="md:text-7xl text-black text-center font-thin text-6xl m-10">
                     {props.title}
                   </h1>
-                  <div className="flex flex-col justify-start items-start w-[43%]">
+                  <div className="flex flex-col justify-start items-start w-full">
                     {props.text}
                   </div>
                 </div>
