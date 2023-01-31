@@ -55,7 +55,7 @@ const Video = (props: Props) => {
                   loop={true}
                   id="myVideo"
                 >
-                  <source src="../assets/gb_wideo.webm" type="video/webm" />
+                  <source src="../assets/gb_wideo.mp4" type="video/mp4" />
                 </video>
                 <div className="w-screen h-[65vh] absolute inset-0 flex flex-col items-center justify-center">
                   <h1 className="z-11 md:text-7xl text-white text-center font-thin text-6xl m-10">
