@@ -48,13 +48,22 @@ const Video = (props: Props) => {
             speed: -15,
             children: (
               <>
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <h1 className="md:text-7xl text-white text-center font-thin text-6xl m-10">
+                <video
+                  className="w-screen h-screen object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  id="myVideo"
+                >
+                  <source src="../assets/gb_wideo.webm" type="video/webm" />
+                </video>
+                <div className="w-screen h-[65vh] absolute inset-0 flex flex-col items-center justify-center">
+                  <h1 className="z-11 md:text-7xl text-white text-center font-thin text-6xl m-10">
                     {props.title}
                   </h1>
                   <button
                     onClick={handleClick}
-                    className="transition ease-in-out delay-150 hover:scale-110 flex flex-col  justify-center items-center  text-md  text-white    font-normal  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg "
+                    className="z-12 transition ease-in-out delay-150 hover:scale-110 flex flex-col  justify-center items-center  text-md  text-white    font-normal  btn btn-xs sm:btn-sm md:btn-md lg:btn-lg "
                   >
                     <p className=" text-md  text-white  font-semibold   ">
                       {props.showMore}
@@ -66,10 +75,8 @@ const Video = (props: Props) => {
             ),
           },
         ]}
-        className="md:h-[65vh] h-screen"
-      >
-        <div>My random div</div>
-      </ParallaxBanner>
+        className="h-[65vh] o"
+      ></ParallaxBanner>
       <div ref={ref}>
         {isShown && (
           <ReadMore>

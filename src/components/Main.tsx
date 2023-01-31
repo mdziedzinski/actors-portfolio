@@ -39,8 +39,29 @@ const Main = () => {
     });
   };
   return (
-    <main className="h-full flex flex-col flex-wrap content-center justify-center ">
-      <Article
+    <main className="h-full w-full overflow-hidden flex flex-col flex-wrap content-center items-center justify-center ">
+      <Video showMore="Zobacz moje demo" title="GRZEGORZ BOROWSKI">
+        <div
+          className="h-[65vh] w-screen
+          p-3 
+          aspect-video "
+        >
+          <iframe
+            className="
+        
+          h-full
+        w-full
+        p-3
+        
+          aspect-video"
+            src="https://www.youtube.com/embed/bkOzRHjofHE"
+            title="Grzegorz Borowski - demo aktorskie | showreel"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </Video>
+      {/* <Article
         bgImage={heroV}
         showMore="Zobacz moje demo"
         title="GRZEGORZ BOROWSKI"
@@ -63,7 +84,7 @@ const Main = () => {
             allowFullScreen
           ></iframe>
         </div>
-      </Article>
+      </Article> */}
       <Article bgImage={hero1} showMore="Rozwiń" title="AUDIOBOOKI I DUBBING">
         <div>
           <h2 className="text-4xl m-4 text-center ">Audiobooki</h2>
