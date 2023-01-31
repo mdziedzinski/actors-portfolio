@@ -15,15 +15,21 @@ import Video from "./Video";
 import Photos from "./Photos";
 import ReCAPTCHA from "react-google-recaptcha";
 import ReadMore from "./ReadMore";
-
-import ArticleParallax from "./ArticleParallax";
+import Contact from "./Contact";
 import { ParallaxBanner } from "react-scroll-parallax";
+import {
+  RiMailLine,
+  RiPhoneFill,
+  RiVidicon2Fill,
+  RiInstagramFill,
+} from "react-icons/ri";
 
 const heroV = "../assets/gb_wideo.webp";
 const hero1 = "../assets/hero-1.webp";
 const hero2 = "../assets/hero-2.webp";
 const hero3 = "../assets/hero-3.webp";
 const hero4 = "../assets/hero-4.webp";
+const contacthero = "../assets/coontact.webp";
 
 const Main = () => {
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
@@ -229,7 +235,45 @@ const Main = () => {
           ></iframe>
         </div>
       </Article>
-      <Article showMore="Rozwiń" bgImage={hero1} title="Kontakt" />
+      <Contact
+        bgImage={contacthero}
+        title="Skontaktuj się ze mną"
+        text={
+          <div className="flex flex-col items-start text-2xl">
+            <span className="m-2"> Grzegorz Borowski</span>
+            <span className="m-2 flex">
+              <RiPhoneFill style={{ marginBlock: "5px", color: "#3b82f6" }} />
+              <p className="mx-2"> 501 691 661</p>
+            </span>
+            <span className="m-2 flex ">
+              <RiMailLine style={{ marginBlock: "5px", color: "#3b82f6" }} />
+              <p className="mx-2"> grzesiek.borowski.mail@gmail.com</p>
+            </span>
+            <span className="m-2 flex">
+              <RiVidicon2Fill
+                style={{ marginBlock: "5px", color: "#3b82f6" }}
+              />
+              <a
+                href="https://filmpolski.pl/fp/index.php?osoba=11133410"
+                className="mx-2 text-blue-500 "
+              >
+                Mój profil na Film Polski
+              </a>
+            </span>
+            <span className="m-2 flex">
+              <RiInstagramFill
+                style={{ marginBlock: "5px", color: "#3b82f6" }}
+              />
+              <a
+                href="https://www.instagram.com/grzesiekborowski/"
+                className="mx-2  text-blue-500 "
+              >
+                @grzesiekborowski
+              </a>
+            </span>
+          </div>
+        }
+      ></Contact>
     </main>
   );
 };
