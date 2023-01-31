@@ -61,7 +61,7 @@ const Video = (props: Props) => {
           playsinline
           preload="metadata"
         >
-        <source src="../assets/gb_wideo.webm"" type="video/webm" />
+        <source src="../assets/gb_wideo.mp4"" type="video/mp4" />
         </video>`,
                   }}
                 />
