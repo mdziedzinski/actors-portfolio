@@ -50,9 +50,9 @@ const Video = (props: Props) => {
               <>
                 <video
                   className="w-screen h-screen object-cover"
-                  autoPlay
-                  muted
-                  loop
+                  autoPlay={true}
+                  muted={true}
+                  loop={true}
                   id="myVideo"
                 >
                   <source src="../assets/gb_wideo.webm" type="video/webm" />
