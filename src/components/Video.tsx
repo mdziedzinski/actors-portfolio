@@ -49,14 +49,19 @@ const Video = (props: Props) => {
             children: (
               <>
                 <video
+                  src="../assets/gb_wideo.mp4"
                   className="w-screen h-screen object-cover"
                   autoPlay
+                  controls
                   muted
                   loop
                   id="myVideo"
+                  poster="../assets/hero-2.webp"
+                  preload="auto"
                 >
-                  <source src="../assets/gb_wideo.mp4" type="video/mp4" />
+                  Video is not supported by your browser
                 </video>
+
                 <div className="w-screen h-[65vh] absolute inset-0 flex flex-col items-center justify-center">
                   <h1 className="z-11 md:text-7xl text-white text-center font-thin text-6xl m-10">
                     {props.title}
