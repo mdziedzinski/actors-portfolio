@@ -75,7 +75,7 @@ const Video = (props: Props) => {
             ),
           },
         ]}
-        className="h-[65vh]"
+        className="h-[65vh] o"
       ></ParallaxBanner>
       <div ref={ref}>
         {isShown && (
