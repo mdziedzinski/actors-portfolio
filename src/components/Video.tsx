@@ -51,9 +51,8 @@ const Video = (props: Props) => {
                 <video
                   src="../assets/gb_wideo.mp4"
                   className="w-screen h-screen object-cover"
+                  muted={true}
                   autoPlay
-                  controls
-                  muted
                   loop
                   id="myVideo"
                   poster="../assets/hero-2.webp"
