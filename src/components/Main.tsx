@@ -19,7 +19,7 @@ import ReadMore from "./ReadMore";
 import ArticleParallax from "./ArticleParallax";
 import { ParallaxBanner } from "react-scroll-parallax";
 
-const heroV = "../assets/hero-v.gif";
+const heroV = "../assets/gb_wideo.webp";
 const hero1 = "../assets/hero-1.webp";
 const hero2 = "../assets/hero-2.webp";
 const hero3 = "../assets/hero-3.webp";

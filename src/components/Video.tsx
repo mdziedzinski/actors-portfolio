@@ -48,7 +48,24 @@ const Video = (props: Props) => {
             speed: -15,
             children: (
               <>
-                <video
+                <div
+                  className="[&>*]:h-screen [&>*]:w-screen [&>*]:object-cover"
+                  dangerouslySetInnerHTML={{
+                    __html: `
+        <video
+        
+        
+          loop
+          muted
+          autoplay
+          playsinline
+          preload="metadata"
+        >
+        <source src="../assets/gb_wideo.webm"" type="video/webm" />
+        </video>`,
+                  }}
+                />
+                {/* <video
                   src="../assets/gb_wideo.mp4"
                   className="w-screen h-screen object-cover"
                   muted={true}
@@ -59,10 +76,10 @@ const Video = (props: Props) => {
                   preload="auto"
                 >
                   Video is not supported by your browser
-                </video>
+                </video> */}
 
-                <div className="w-screen h-[65vh] absolute inset-0 flex flex-col items-center justify-center">
-                  <h1 className="z-11 md:text-7xl text-white text-center font-thin text-6xl m-10">
+                <div className="mt-10 w-screen h-[65vh] absolute inset-0 flex flex-col items-center justify-center">
+                  <h1 className="md:text-7xl text-white text-center font-thin text-6xl m-10">
                     {props.title}
                   </h1>
                   <button
@@ -79,7 +96,7 @@ const Video = (props: Props) => {
             ),
           },
         ]}
-        className="h-[65vh] o"
+        className="h-[65vh]"
       ></ParallaxBanner>
       <div ref={ref}>
         {isShown && (
