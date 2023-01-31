@@ -53,6 +53,7 @@ const Video = (props: Props) => {
                   autoPlay
                   muted
                   loop
+                  controls
                   id="myVideo"
                 >
                   <source src="../assets/gb_wideo.mp4" type="video/mp4" />
