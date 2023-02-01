@@ -1,7 +1,5 @@
 # Actor's Portfolio
 
-![Design preview of the app](./preview.png)
-
 ## Welcome! 👋
 
 This is actor's portfolio built with React (TypeScript). 
