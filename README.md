@@ -20,4 +20,4 @@ This is protfiolio-type single page application with scroll-parallax effect.
 
 ## Live website :tada:
 
-- [ColorFilterApp live on Netlify](https://grzegorzborowski.com/)
+- [Actor's Portfolio live on Netlify](https://grzegorzborowski.com/)
