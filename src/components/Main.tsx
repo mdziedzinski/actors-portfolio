@@ -234,7 +234,7 @@ const Main = () => {
           bgImage={contacthero}
           title="Kontakt"
           text={
-            <div className="flex flex-col  items-start text-xl md:text-2xl w-full">
+            <div className="flex flex-col md:items-center items-start text-xl md:text-3xl w-full p-10">
               <span className="m-2"> Grzegorz Borowski</span>
               <span className="m-2 flex">
                 <RiPhoneFill style={{ marginBlock: "5px", color: "#3b82f6" }} />
