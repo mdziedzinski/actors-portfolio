@@ -3,6 +3,7 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   mode: "jit",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+
   theme: {
     extend: {
       backgroundImage: {
@@ -18,16 +19,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    plugin(function ({ matchUtilities, theme }) {
-      matchUtilities(
-        {
-          "text-shadow": (value) => ({
-            textShadow: value,
-          }),
-        },
-        { values: theme("textShadow") }
-      );
-    }),
-  ],
+  plugins: [require("flowbite/plugin")],
 };
