@@ -6,6 +6,7 @@ import React, {
   useState,
   RefObject,
   MutableRefObject,
+  Fragment,
 } from "react";
 import { createSecureContext } from "tls";
 import { flushSync } from "react-dom";
@@ -17,6 +18,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import ReadMore from "./ReadMore";
 import Contact from "./Contact";
 import { ParallaxBanner } from "react-scroll-parallax";
+import { GraphQLClient, gql, request } from "graphql-request";
 
 import {
   RiMailLine,
@@ -24,6 +26,10 @@ import {
   RiVidicon2Fill,
   RiInstagramFill,
 } from "react-icons/ri";
+
+const graphcms = new GraphQLClient(
+  "https://api-eu-west-2.hygraph.com/v2/cldpzkyi32fpa01ul5krib2rx/master"
+);
 
 const heroV = "../assets/gb_wideo.webp";
 const hero1 = "../assets/hero-1.webp";
@@ -33,6 +39,24 @@ const hero4 = "../assets/hero-4.webp";
 const contacthero = "../assets/coontact.webp";
 
 const Main = () => {
+  const [post, setPost] = useState({});
+  useEffect(() => {
+    const fetchPost = async () => {
+      const { post } = await request(
+        `https://api-eu-west-2.hygraph.com/v2/cldpzkyi32fpa01ul5krib2rx/master`,
+        `{
+  post(where: {id: "cldq3siyud5i90amcqo6px1k7"}) {
+    content {
+      html
+    }
+  }
+}`
+      );
+      setPost(post.content.html);
+    };
+    fetchPost();
+  }, []);
+
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
   const [isShown, setIsShown] = useState(false);
   const handleClick = (event: any) => {
@@ -45,6 +69,8 @@ const Main = () => {
       inline: "nearest",
     });
   };
+
+  console.log(post);
   return (
     <>
       <main className="h-full w-full overflow-hidden flex flex-col flex-wrap content-center items-center justify-center ">
@@ -95,6 +121,15 @@ const Main = () => {
       </Article> */}
         <Article bgImage={hero1} showMore="Rozwiń" title="AUDIOBOOKI I DUBBING">
           <div>
+            {!post ? (
+              "Wczytywanie"
+            ) : (
+              <div
+                className="[&_ul]:list-disc [&_ul]:m-6 [&_p]:m-4 [&_h2]:text-4xl [&_h2]:text-center w-screen"
+                dangerouslySetInnerHTML={{ __html: `${post}` }}
+              />
+            )}
+
             <h2 className="text-4xl m-4 text-center ">Audiobooki</h2>
             <p className="m-4">
               Przeczytanych przeze mnie książek możesz posłuchać w takich
