@@ -125,7 +125,7 @@ const Main = () => {
               "Wczytywanie"
             ) : (
               <div
-                className="[&_ul]:list-disc [&_ul]:m-6 [&_p]:m-4 [&_h2]:text-4xl [&_h2]:text-center w-screen"
+                className="[&_ul]:list-disc [&_ul]:m-6 [&_p]:m-4 [&_h2]:text-4xl [&_h2]:text-center w-screen  [&_iframe]:h-full  [&_iframe]:w-full  [&_iframe]:max-h-[90vh] [&_iframe]:max-w-[90vw]  [&_iframe]:aspect-video [&_iframe]:p-10"
                 dangerouslySetInnerHTML={{ __html: `${post}` }}
               />
             )}
