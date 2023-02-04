@@ -19,6 +19,8 @@ import ReadMore from "./ReadMore";
 import Contact from "./Contact";
 import { ParallaxBanner } from "react-scroll-parallax";
 import { GraphQLClient, gql, request } from "graphql-request";
+import { RichText } from "@graphcms/rich-text-react-renderer";
+import { RichTextContent, ElementNode } from "@graphcms/rich-text-types";
 
 import {
   RiMailLine,
@@ -31,6 +33,9 @@ const graphcms = new GraphQLClient(
   "https://api-eu-west-2.hygraph.com/v2/cldpzkyi32fpa01ul5krib2rx/master"
 );
 
+const styleContent =
+  "[&_ul]:list-disc [&_ul]:m-6 [&_p]:m-4 [&_h2]:text-4xl [&_h2]:text-center w-screen  [&_iframe]:h-full  [&_iframe]:w-full  [&_iframe]:max-h-[90vh] [&_iframe]:max-w-[90vw]  [&_iframe]:aspect-video [&_iframe]:p-10  [&_a]:w-max [&_p]:w-max [&_a]:hover:text-sky-500";
+
 const heroV = "../assets/gb_wideo.webp";
 const hero1 = "../assets/hero-1.webp";
 const hero2 = "../assets/hero-2.webp";
@@ -39,22 +44,30 @@ const hero4 = "../assets/hero-4.webp";
 const contacthero = "../assets/coontact.webp";
 
 const Main = () => {
-  const [post, setPost] = useState({});
+  const [posts, setPosts] = useState<any[]>([]);
+
   useEffect(() => {
-    const fetchPost = async () => {
-      const { post } = await request(
-        `https://api-eu-west-2.hygraph.com/v2/cldpzkyi32fpa01ul5krib2rx/master`,
-        `{
-  post(where: {id: "cldq3siyud5i90amcqo6px1k7"}) {
+    const fetchPosts = async () => {
+      const { posts } = await request(
+        "https://api-eu-west-2.hygraph.com/v2/cldpzkyi32fpa01ul5krib2rx/master",
+        `
+      {
+  posts {
     content {
-      html
+      html,
+      raw
     }
+    id
+    title
   }
-}`
+}
+    `
       );
-      setPost(post.content.html);
+
+      setPosts(posts);
     };
-    fetchPost();
+
+    fetchPosts();
   }, []);
 
   const ref = useRef() as MutableRefObject<HTMLDivElement>;
@@ -70,7 +83,11 @@ const Main = () => {
     });
   };
 
-  console.log(post);
+  if (posts.length === 0) {
+    console.log(posts);
+  } else {
+    console.log(posts[0].content);
+  }
   return (
     <>
       <main className="h-full w-full overflow-hidden flex flex-col flex-wrap content-center items-center justify-center ">
@@ -121,15 +138,18 @@ const Main = () => {
       </Article> */}
         <Article bgImage={hero1} showMore="Rozwiń" title="AUDIOBOOKI I DUBBING">
           <div>
-            {!post ? (
-              "Wczytywanie"
-            ) : (
-              <div
-                className="[&_ul]:list-disc [&_ul]:m-6 [&_p]:m-4 [&_h2]:text-4xl [&_h2]:text-center w-screen  [&_iframe]:h-full  [&_iframe]:w-full  [&_iframe]:max-h-[90vh] [&_iframe]:max-w-[90vw]  [&_iframe]:aspect-video [&_iframe]:p-10"
-                dangerouslySetInnerHTML={{ __html: `${post}` }}
-              />
-            )}
-
+            <>
+              {posts.length === 0 ? (
+                "Wczytywanie"
+              ) : (
+                <div
+                  className={styleContent}
+                  dangerouslySetInnerHTML={{
+                    __html: `${posts[0].content.html}`,
+                  }}
+                />
+              )}
+            </>
             <h2 className="text-4xl m-4 text-center ">Audiobooki</h2>
             <p className="m-4">
               Przeczytanych przeze mnie książek możesz posłuchać w takich
