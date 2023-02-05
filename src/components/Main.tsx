@@ -1,26 +1,14 @@
-import React, {
-  ElementType,
-  useEffect,
-  ReactNode,
-  useRef,
-  useState,
-  RefObject,
-  MutableRefObject,
-  Fragment,
-} from "react";
-import { createSecureContext } from "tls";
+import { useEffect, useRef, useState, MutableRefObject } from "react";
+
 import { flushSync } from "react-dom";
 import Article from "./Article";
-import gbwideo from "../assets/gb_wideo.webm";
+
 import Video from "./Video";
 import Photos from "./Photos";
-import ReCAPTCHA from "react-google-recaptcha";
-import ReadMore from "./ReadMore";
+
 import Contact from "./Contact";
-import { ParallaxBanner } from "react-scroll-parallax";
-import { GraphQLClient, gql, request } from "graphql-request";
-import { RichText } from "@graphcms/rich-text-react-renderer";
-import { RichTextContent, ElementNode } from "@graphcms/rich-text-types";
+
+import { request } from "graphql-request";
 
 import {
   RiMailLine,
@@ -29,12 +17,8 @@ import {
   RiInstagramFill,
 } from "react-icons/ri";
 
-const graphcms = new GraphQLClient(
-  "https://api-eu-west-2.hygraph.com/v2/cldpzkyi32fpa01ul5krib2rx/master"
-);
-
 const styleContent =
-  "[&_ul]:list-disc [&_ul]:m-6 [&_p]:m-4 [&_h2]:text-4xl [&_h2]:text-center w-screen  [&_iframe]:h-full  [&_iframe]:w-full  [&_iframe]:max-h-[90vh] [&_iframe]:max-w-[90vw]  [&_iframe]:aspect-video [&_iframe]:p-10  [&_a]:w-max [&_p]:w-max [&_a]:hover:text-sky-500";
+  "[&_ul]:list-disc [&_ul]:m-6 [&_p]:m-4 [&_h2]:text-4xl [&_h2]:text-center w-screen  [&_iframe]:h-full  [&_iframe]:w-full  [&_iframe]:max-h-[90vh] [&_iframe]:max-w-[90vw]  [&_iframe]:aspect-video [&_iframe]:p-10  [&_a]:w-max [&_p]:w-max [&_a]:hover:text-sky-500 container mx-auto [&_p]:max-w-full m-4";
 
 const hero1 = "../assets/hero-1.webp";
 const hero2 = "../assets/hero-2.webp";
@@ -126,30 +110,7 @@ const Main = () => {
             ></iframe>
           </div>
         </Video>
-        {/* <Article
-        bgImage={heroV}
-        showMore="Zobacz moje demo"
-        title="GRZEGORZ BOROWSKI"
-      >
-        <div
-          className="h-[90vh] w-[95vw] p-5
-          aspect-square
-          md:aspect-video"
-        >
-          <iframe
-            className="
-        
-          h-full
-          w-full
-          aspect-square
-          md:aspect-video"
-            src="https://www.youtube.com/embed/bkOzRHjofHE"
-            title="Grzegorz Borowski - demo aktorskie | showreel"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </Article> */}
+
         <Article bgImage={hero1} showMore="Rozwiń" title="AUDIOBOOKI I DUBBING">
           <>{renderContent(0)}</>
         </Article>
@@ -160,41 +121,11 @@ const Main = () => {
           </div>
         </Article>
         <Article showMore="Rozwiń" bgImage={hero3} title="O MNIE">
-          <h2 className="text-4xl m-4 text-center ">O mnie</h2>
-          <div className="p-5 m-4">
-            <p>
-              Jestem z wykształcenia aktorem. Skończyłem Akademię Sztuk
-              Teatralnych we Wrocławiu.
-            </p>
-            Pracuję jako aktor teatralny, serialowy oraz głosowy (dubbing i
-            audiobooki). Prowadzę również kanał na YouTube pt.: „Chodź na
-            słówko”, który popularyzuje praktykę medytacji w codziennym życiu.
-            Jeśli chciałabyś/ chciałbyś skontaktować się ze mną w sprawie
-            współpracy, to zajrzyj do zakładki „Kontakt” :)
-          </div>
+          <div>{renderContent(1)}</div>
         </Article>
         <Article showMore="Rozwiń" bgImage={hero4} title=' "Chodź na Słówko"'>
-          <h2 className="text-4xl m-4 text-center ">
-            Projekt „Chodź na słówko”
-          </h2>
-          <div className="p-5 m-4">
-            <p>
-              Od 2020 roku razem z Marcinem Dziedzińskim prowadzę kanał na
-              YouTube pt.: Chodź na słówko.
-            </p>
-            <p>
-              To projekt popularyzujący praktykę medytacji i ćwiczeń oddechowych
-              w codziennym życiu. Na kanale znajdziesz mnóstwo prowadzonych
-              przeze mnie prostych ćwiczeń, które pomogą Ci poradzić sobie ze
-              stresem w ciągu dnia, a także medytacji, które pomogą Ci z
-              zaśnięciem w nocy. Nasze nagrania są wyświetlane średnio 500 000
-              razy miesięcznie, a sam kanał ma już ponad 70 000 subskrybentów.
-            </p>
-          </div>
-          <a href="https://chodznaslowko.com/" className="m-4 p-3 text-center">
-            Więcej informacji znajdziesz na naszej stronie internetowej:{" "}
-            <span className="text-blue-500 underline">chodznaslowko.com</span>
-          </a>
+          <div>{renderContent(2)}</div>
+
           <div className="flex justify-center h-full m-5">
             <iframe
               className=" 
