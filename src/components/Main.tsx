@@ -36,7 +36,6 @@ const graphcms = new GraphQLClient(
 const styleContent =
   "[&_ul]:list-disc [&_ul]:m-6 [&_p]:m-4 [&_h2]:text-4xl [&_h2]:text-center w-screen  [&_iframe]:h-full  [&_iframe]:w-full  [&_iframe]:max-h-[90vh] [&_iframe]:max-w-[90vw]  [&_iframe]:aspect-video [&_iframe]:p-10  [&_a]:w-max [&_p]:w-max [&_a]:hover:text-sky-500";
 
-const heroV = "../assets/gb_wideo.webp";
 const hero1 = "../assets/hero-1.webp";
 const hero2 = "../assets/hero-2.webp";
 const hero3 = "../assets/hero-3.webp";
@@ -81,6 +80,21 @@ const Main = () => {
       block: "start",
       inline: "nearest",
     });
+  };
+
+  const renderContent = (number: number) => {
+    if (posts.length === 0) {
+      return <h2>Wczytywanie treści...</h2>;
+    } else {
+      return (
+        <div
+          className={styleContent}
+          dangerouslySetInnerHTML={{
+            __html: `${posts[number].content.html}`,
+          }}
+        />
+      );
+    }
   };
 
   if (posts.length === 0) {
@@ -137,84 +151,7 @@ const Main = () => {
         </div>
       </Article> */}
         <Article bgImage={hero1} showMore="Rozwiń" title="AUDIOBOOKI I DUBBING">
-          <div>
-            <>
-              {posts.length === 0 ? (
-                "Wczytywanie"
-              ) : (
-                <div
-                  className={styleContent}
-                  dangerouslySetInnerHTML={{
-                    __html: `${posts[0].content.html}`,
-                  }}
-                />
-              )}
-            </>
-            <h2 className="text-4xl m-4 text-center ">Audiobooki</h2>
-            <p className="m-4">
-              Przeczytanych przeze mnie książek możesz posłuchać w takich
-              miejscach, jak: Virtualo, Audioteka, Storytel, Empik Go.
-            </p>
-            <p className="m-4">A to kilka z nich:</p>
-            <ul className="list-disc m-6 p-4">
-              <li>James Clawell „Gai-Jin”</li>
-              <li>Tomasz Kabarowski, Piotr Wójcik „Kryptowaluty od zera”</li>
-              <li> Florian Konrad „Wypadowy - twór anormalny”</li>
-              <li> Agata Czykierda-Grabowska „Felicja znaczy szczęście” </li>
-              <li> Anna Rosłoniec „Zorza”</li> <li> Jacek Paśnik „Dzieci” </li>
-              <li> Krzysztof Beśka „Autoportret z samowarem”</li>
-              <li> Richard Masland „Czego oczy nie widzą” </li>
-              <li> Monika Skabara „Trzeci dziedzic. Dziedzictwo. Tom 3”</li>
-              <li>Krzysztof Kasowski „Upadek króla rapu”</li>
-              <li>John Scalzi „Upadające imperium” </li>
-              <li>
-                Andrzej Chwalba, Wojciech Harpula „Polska-Rosja. Historia
-                obsesji, obsesja historii”{" "}
-              </li>
-              <li>Peter Wohlleben „Dotknij, poczuj, zobacz” </li>
-              <li> Leon Windscheid „Po co ci emocje” </li>
-              <li> Kazimierz Bilka-Arcikiewicz „Spisek”</li>
-              <li>
-                Jakub Wojtaszczyk „Cudowne przegięcie. Reportaż o polskim
-                dragu.”
-              </li>
-            </ul>
-            <h2 className="text-4xl m-4 text-center ">Dubbing</h2>
-            <div
-              className="h-[90vh] w-[95vw] p-5
-          aspect-square
-          md:aspect-video"
-            >
-              <iframe
-                className="
-        
-          h-full
-          w-full
-          aspect-square
-          md:aspect-video"
-                src="https://www.youtube.com/embed/9mP3G9BqXUo"
-                title="Grzegorz Borowski - demo dubbing"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <h3 className="text-3xl   m-4 text-center ">Role dubbingowe</h3>
-
-            <a
-              className="block text-center hover:text-sky-500 m-3"
-              href="https://dubbingpedia.pl/wiki/Grzegorz_Borowski"
-            >
-              ▸Zobacz moje role na stronie{" "}
-              <span className="text-blue-500 underline">Dubbingopedia.pl </span>
-            </a>
-            <a
-              className="block text-center hover:text-sky-500 m-3"
-              href="https://www.filmweb.pl/person/Grzegorz+Borowski-2593872"
-            >
-              ▸Zobacz moje role na stronie{" "}
-              <span className="text-blue-500 underline">Filmweb.pl</span>
-            </a>
-          </div>
+          <>{renderContent(0)}</>
         </Article>
         <Article showMore="Rozwiń" bgImage={hero2} title="GALERIA">
           <div className="flex flex-col m-2 justify-center p-2 w-full">
