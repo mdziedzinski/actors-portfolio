@@ -6,7 +6,7 @@ This is actor's portfolio built with React (TypeScript) and integrated with head
 
 ## Features
 
-This is protfiolio-type single page application with scroll-parallax effect and content management via headless CMS connected via GraphQL API. 
+This is protfiolio-type single page application with scroll-parallax effect and content management via headless CMS (native GraphQL Headless CMS)
 
 ## Tools used
 
