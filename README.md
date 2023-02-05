@@ -15,7 +15,7 @@ This is protfiolio-type single page application with scroll-parallax effect and 
   - React-Scroll-Parallax
   - TailwindCSS
   - GraphQL 
- - Hygrap (headless CMS) 
+ - Hygraph (headless CMS) 
 
 
 ## Live website :tada:
