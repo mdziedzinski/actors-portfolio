@@ -26,13 +26,18 @@ const hero3 = "../assets/hero-3.webp";
 const hero4 = "../assets/hero-4.webp";
 const contacthero = "../assets/coontact.webp";
 
+interface ProcessEnv {
+  [key: string]: string | undefined;
+}
+
 const Main = () => {
   const [posts, setPosts] = useState<any[]>([]);
+  const hygraphAPI: string = process.env.REACT_APP_HYGRAPH_API ?? "default";
 
   useEffect(() => {
     const fetchPosts = async () => {
       const { posts } = await request(
-        "https://api-eu-west-2.hygraph.com/v2/cldpzkyi32fpa01ul5krib2rx/master",
+        hygraphAPI,
         `
       {
   posts {
@@ -81,11 +86,6 @@ const Main = () => {
     }
   };
 
-  if (posts.length === 0) {
-    console.log(posts);
-  } else {
-    console.log(posts[0].content);
-  }
   return (
     <>
       <main className="h-full w-full overflow-hidden flex flex-col flex-wrap content-center items-center justify-center ">
