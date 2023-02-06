@@ -18,7 +18,7 @@ import {
 } from "react-icons/ri";
 
 const styleContent =
-  "[&_ul]:list-disc [&_ul]:m-6 [&_p]:m-4 [&_h2]:text-4xl [&_h2]:text-center w-screen  [&_iframe]:h-full  [&_iframe]:w-full  [&_iframe]:max-h-[90vh]  [&_iframe]:md:aspect-video [&_iframe]:aspect-square  [&_iframe]:p-4  [&_a]:w-max [&_p]:w-max [&_a]:hover:text-sky-500 container mx-auto [&_p]:max-w-full m-4 max-w-[100%] [&_iframe]:block p-4";
+  "[&_ul]:list-disc [&_ul]:m-6 [&_ul]:px-4 [&_p]:my-4 [&_p]:px-4 [&_h2]:text-4xl [&_h2]:text-center w-screen  [&_iframe]:h-full  [&_iframe]:w-full [&_iframe]:px-5  [&_iframe]:max-h-[90vh]  [&_iframe]:md:aspect-video [&_iframe]:aspect-square  [&_a]:w-max [&_p]:w-max [&_a]:hover:text-sky-500  [&_p]:max-w-full m-4 max-w-[100%] [&_iframe]:block [&_a]:m-0 [&_a]:p-0 ";
 
 const hero1 = "../assets/hero-1.webp";
 const hero2 = "../assets/hero-2.webp";
@@ -88,7 +88,7 @@ const Main = () => {
 
   return (
     <>
-      <main className="flex h-full w-full flex-col flex-wrap content-center items-center justify-center overflow-hidden ">
+      <main className="flex h-full w-full flex-col flex-wrap content-center items-center justify-center overflow-hidden bg-gray-900">
         <Video showMore="Zobacz moje demo" title="GRZEGORZ BOROWSKI">
           <div
             className={styleContent}
@@ -127,13 +127,15 @@ const Main = () => {
         <Article showMore="Rozwiń" bgImage={hero4} title=' "Chodź na Słówko"'>
           <div>{renderContent(2)}</div>
 
-          <div className="m-5 flex h-full justify-center">
+          <div className="flex h-full w-full flex-col content-center justify-center  px-5 md:flex-row ">
             <iframe
-              className=" 
-        m-4
+              className="
+              m-4
+
+   
         aspect-video
         h-full
-          w-full"
+         "
               src="https://www.youtube.com/embed/eNxTk8QT2s0"
               title="Chodź na słówko zwiastun kanału"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -142,11 +144,13 @@ const Main = () => {
 
             <iframe
               className=" 
-              m-4
+            m-4
+           
+            
               aspect-video
         h-full
          
-        w-full"
+        "
               src="https://www.youtube.com/embed/U_Xj8AMN0QU"
               title="Chodź na słówko wim hof"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
