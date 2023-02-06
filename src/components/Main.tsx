@@ -135,6 +135,7 @@ const Main = () => {
    
         aspect-video
         h-full
+        md:w-full
          "
               src="https://www.youtube.com/embed/eNxTk8QT2s0"
               title="Chodź na słówko zwiastun kanału"
@@ -146,9 +147,9 @@ const Main = () => {
               className=" 
             m-4
            
-            
-              aspect-video
-        h-full
+            aspect-video
+              h-full
+        md:w-full
          
         "
               src="https://www.youtube.com/embed/U_Xj8AMN0QU"
