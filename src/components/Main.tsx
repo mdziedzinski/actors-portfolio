@@ -88,21 +88,21 @@ const Main = () => {
 
   return (
     <>
-      <main className="h-full w-full overflow-hidden flex flex-col flex-wrap content-center items-center justify-center ">
+      <main className="flex h-full w-full flex-col flex-wrap content-center items-center justify-center overflow-hidden ">
         <Video showMore="Zobacz moje demo" title="GRZEGORZ BOROWSKI">
           <div
-            className="h-[65vh] w-screen
-          p-3 
-          aspect-video "
+            className="aspect-video h-[65vh]
+          w-screen 
+          p-3 "
           >
             <iframe
               className="
         
-          h-full
+          aspect-video
+        h-full
         w-full
-        p-3
         
-          aspect-video"
+          p-3"
               src="https://www.youtube.com/embed/bkOzRHjofHE"
               title="Grzegorz Borowski - demo aktorskie | showreel"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -115,8 +115,8 @@ const Main = () => {
           <>{renderContent(0)}</>
         </Article>
         <Article showMore="Rozwiń" bgImage={hero2} title="GALERIA">
-          <div className="flex flex-col m-2 justify-center p-2 w-full">
-            <h2 className="text-4xl m-4 text-center ">Zdjęcia</h2>
+          <div className="m-2 flex w-full flex-col justify-center p-2">
+            <h2 className="m-4 text-center text-4xl ">Zdjęcia</h2>
             <Photos></Photos>
           </div>
         </Article>
@@ -126,13 +126,13 @@ const Main = () => {
         <Article showMore="Rozwiń" bgImage={hero4} title=' "Chodź na Słówko"'>
           <div>{renderContent(2)}</div>
 
-          <div className="flex justify-center h-full m-5">
+          <div className="m-5 flex h-full justify-center">
             <iframe
               className=" 
+        m-4
         aspect-video
         h-full
-        w-full
-          m-4"
+          w-full"
               src="https://www.youtube.com/embed/eNxTk8QT2s0"
               title="Chodź na słówko zwiastun kanału"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -141,11 +141,11 @@ const Main = () => {
 
             <iframe
               className=" 
-              h-full
-              w-full
-        aspect-video
+              m-4
+              aspect-video
+        h-full
          
-        m-4"
+        w-full"
               src="https://www.youtube.com/embed/U_Xj8AMN0QU"
               title="Chodź na słówko wim hof"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -157,7 +157,7 @@ const Main = () => {
           bgImage={contacthero}
           title="Kontakt"
           text={
-            <div className="flex flex-col md:items-center items-start text-xl md:text-3xl w-full p-10">
+            <div className="flex w-full flex-col items-start p-10 text-xl md:items-center md:text-3xl">
               <span className="m-2"> Grzegorz Borowski</span>
               <span className="m-2 flex">
                 <RiPhoneFill style={{ marginBlock: "5px", color: "#3b82f6" }} />
