@@ -18,7 +18,7 @@ import {
 } from "react-icons/ri";
 
 const styleContent =
-  "[&_ul]:list-disc [&_ul]:m-6 [&_p]:m-4 [&_h2]:text-4xl [&_h2]:text-center w-screen  [&_iframe]:h-full  [&_iframe]:w-full  [&_iframe]:max-h-[90vh] [&_iframe]:max-w-[90vw]  [&_iframe]:aspect-video [&_iframe]:p-10  [&_a]:w-max [&_p]:w-max [&_a]:hover:text-sky-500 container mx-auto [&_p]:max-w-full m-4 max-w-[100%] [&_iframe]:block p-4";
+  "[&_ul]:list-disc [&_ul]:m-6 [&_p]:m-4 [&_h2]:text-4xl [&_h2]:text-center w-screen  [&_iframe]:h-full  [&_iframe]:w-full  [&_iframe]:max-h-[90vh]  [&_iframe]:aspect-video [&_iframe]:p-10  [&_a]:w-max [&_p]:w-max [&_a]:hover:text-sky-500 container mx-auto [&_p]:max-w-full m-4 max-w-[100%] [&_iframe]:block p-4";
 
 const hero1 = "../assets/hero-1.webp";
 const hero2 = "../assets/hero-2.webp";
@@ -91,18 +91,19 @@ const Main = () => {
       <main className="flex h-full w-full flex-col flex-wrap content-center items-center justify-center overflow-hidden ">
         <Video showMore="Zobacz moje demo" title="GRZEGORZ BOROWSKI">
           <div
-            className="aspect-video h-[65vh]
-          w-screen 
-          p-3 "
+            className={styleContent}
+            //   className="aspect-video h-[65vh]
+            // w-screen
+            // p-3 "
           >
             <iframe
-              className="
-        
-          aspect-video
-        h-full
-        w-full
-        
-          p-3"
+              //       className="
+
+              //   aspect-video
+              // h-full
+              // w-full
+
+              //   p-3"
               src="https://www.youtube.com/embed/bkOzRHjofHE"
               title="Grzegorz Borowski - demo aktorskie | showreel"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
