@@ -4,8 +4,7 @@ const ReadMore = (props: any) => {
   return (
     <div
       ref={props.ref}
-      id="99"
-      className="flex flex-col  p-5 w-screen h-full text-slate-50 bg-gray-900"
+      className="flex h-full w-screen flex-col bg-gray-900 p-5 text-slate-50"
     >
       {props.children}
     </div>
